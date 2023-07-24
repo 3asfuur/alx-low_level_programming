@@ -1,19 +1,25 @@
-#include "holberton.h"
-
+#include "main.h"
 /**
-  * factorial - Calculate the factorial of a number
-  * @n: the number to calculate the factorial
-  *
-  * Return: integer value
-  */
+ * factorial - factorial of int
+ * @n:int
+ * Return:int
+ */
 int factorial(int n)
 {
-	if (n < 0)
-		return (-1);
+	int x;
 
-	if (n <= 1)
+	if (n == 0)
+	{
 		return (1);
+	}
+	else if (n < 0)
+	{
+		return (-1);
+	}
+	else
+	{
+		x = n * factorial(n - 1);
+	}
+			return (x);
 
-	return (n * factorial(n - 1));
 }
-
