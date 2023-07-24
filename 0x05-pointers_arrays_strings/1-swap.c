@@ -1,18 +1,16 @@
-#include "holberton.h"
-
+#include "main.h"
 /**
-  * swap_int - Swaps the values of two integers
-  *
-  * @a: An integer to swap
-  * @b: Another integer to swap
-  *
-  * Return: void
-  */
+* swap_int - swaps the value of int a and int b
+* Owned by Bwave/Bright
+* @a: first int
+* @b: second int
+* Return 0
+*/
 void swap_int(int *a, int *b)
 {
-	int aux;
+		int s;
 
-	aux = *a;
-	*a = *b;
-	*b = aux;
+		s = *a;
+		*a = *b;
+		*b = s;
 }
