@@ -1,32 +1,24 @@
-#include "main.h"
-
+#include "holberton.h"
 /**
- * _strspn - a function that gets the length of a prefix substring
+ * _strspn - prints the consecutive caracters of s1 that are in s2.
+ * @s: source string
+ * @accept: searching string
  *
- * @s: the initial segment of
- *
- * @accept: which consist only of bytes from
- *
- * Return: the number of bytes
+ * Return: new string.
  */
-
 unsigned int _strspn(char *s, char *accept)
 {
-	int z = 0, x, y;
+	unsigned int i, j;
 
-	for (x = 0; s[x] != '\0'; x++)
+	for (j = 0; *(s + j); j++)
 	{
-		if (s[x] != 32)
+		for (i = 0; *(accept + i); i++)
 		{
-			for (y = 0; accept[y] != '\0'; y++)
-			{
-				if (s[x] == accept[y])
-					z++;
-			}
+			if (*(s + j) == *(accept + i))
+				break;
 		}
-		else
-			return (z);
+	if (*(accept + i) == '\0')
+		break;
 	}
-		return (z);
-
+	return (j);
 }

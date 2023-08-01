@@ -1,33 +1,43 @@
-#include "main.h"
-
+#include "holberton.h"
 /**
- * _strstr - locates a substring
+ * _strstr - prints the consecutive caracters of s1 that are in s2.
+ * @haystack: source string
+ * @needle: searching string
  *
- * @haystack: the longer string to search
- * @needle: the first occurrence of the substring
- *
- * Return: a pointer beg of substring or @Null if it not foound.
+ * Return: new string.
  */
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int i = 0, j = 0;
-
-	while (haystack[i])
+	while (*haystack)
 	{
-		while (needle[j] && (haystack[i] == needle[0]))
+		if ((*haystack == *needle && coincidence(haystack, needle) == 1) || !*needle)
 		{
-			if (haystack[i + j] == needle[j])
-				j++;
-			else
-				break;
-		}
-		if (needle[j])
-		{
-			i++;
-			j = 0;
+			return (haystack);
 		}
 		else
-			return (haystack + i);
+		{
+			haystack++;
+		}
 	}
 	return (0);
+}
+/**
+ * coincidence - define if the string b is inside a.
+ * @a: source string
+ * @b: string to be searched
+ *
+ * Return: 1 if there is coincidence, otherwise 0.
+ */
+int coincidence(char *a, char *b)
+{
+	while (*b && *b == *a)
+	{
+		b++;
+		a++;
+	}
+
+	if (*b == '\0')
+		return (1);
+	else
+		return (0);
 }
