@@ -1,18 +1,14 @@
-#include "holberton.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
-  * main - Prints its name
-  * @argc: argument count
-  * @argv: argument vector
-  *
-  * Return: Always zero
-  */
-int main(int argc, char *argv[])
+ * main - print the name of the executable.
+ * @argc: argument count or size of arguments.
+ * @argv: argument vector
+ *
+ * Return: always 0.
+ */
+int main(int argc __attribute__((unused)), char **argv)
 {
-	(void) argc;
-	printf("%s\n", argv[0]);
-
+	printf("%s\n", *argv);
 	return (0);
 }
-

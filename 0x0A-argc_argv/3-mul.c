@@ -1,30 +1,25 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
-  * main - Prints the multiplication of two args numbers
-  * @argc: argument count
-  * @argv: argument vector
-  *
-  * Return: Always zero
-  */
-int main(int argc, char *argv[])
+ * main - print the multiplication of two arguments.
+ * @argc: argument count or size of arguments.
+ * @argv: argument vector
+ *
+ * Return: 1 if are less of 2 arguments otherwise 0.
+ */
+int main(int argc, char **argv)
 {
-	int n1 = 0, n2 = 0;
+	int multiplication;
 
-	if (argc == 3)
-	{
-		n1 = atoi(argv[1]);
-		n2 = atoi(argv[2]);
-		printf("%d\n", n1 * n2);
-	}
-	else
+	if (argc < 3 || argc > 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-
+	else
+	{
+		multiplication = atoi(*(argv + 1)) * atoi(*(argv + 2));
+		printf("%i\n", multiplication);
+	}
 	return (0);
 }
-
